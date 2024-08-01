@@ -19,6 +19,6 @@ Run : <code>npm run build</code>
 
 ## Update Logs
 
-### Version 1.2.1 - Initial Release - [Mar 13, 2023]
+### Version 1.2.2 - Initial Release - [Mar 13, 2023]
 
 - Initial release of EvolveDev Dashboard.
