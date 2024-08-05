@@ -1,10 +1,32 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import ClickOutside from '../ClickOutside';
 import UserOne from '../../images/user/user-01.png';
+import { useDispatch, useSelector } from 'react-redux';
+import { useLogoutMutation } from '../../slices/userApiSlice';
+import { logout } from '../../slices/authSlice';
 
 const DropdownUser = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const { userInfo } = useSelector(
+    (state: { auth: { userInfo: any } }) => state.auth,
+  );
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const [logoutApiCall] = useLogoutMutation();
+
+  const handleLogout = async () => {
+    try {
+      await logoutApiCall().unwrap();
+      dispatch(logout());
+      navigate('/');
+      setDropdownOpen(false);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <ClickOutside onClick={() => setDropdownOpen(false)} className="relative">
@@ -99,7 +121,10 @@ const DropdownUser = () => {
               </Link>
             </li>
           </ul>
-          <button className="flex items-center gap-3.5 px-6 py-4 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+          <button
+            className="flex items-center gap-3.5 px-6 py-4 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
+            onClick={handleLogout}
+          >
             <svg
               className="fill-current"
               width="22"

@@ -25,3 +25,13 @@ export type Post = {
     HYGRAPH_API_TOKEN: string;
   };
   
+
+export interface UserInfo {
+  id: string;
+  name: string;
+  email: string;
+}
+  
+export interface AuthState {
+  userInfo: UserInfo | null;
+}

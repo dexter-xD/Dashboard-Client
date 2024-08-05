@@ -34,8 +34,8 @@ function App() {
           index
           element={
             <>
-              <PageTitle title="eCommerce Dashboard | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <Posts />
+              <PageTitle title="Dashboard | EvolveDev - Admin Dashboard" />
+              <SignIn />
             </>
           }
         />
@@ -43,7 +43,7 @@ function App() {
           path="/profile"
           element={
             <>
-              <PageTitle title="Profile | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Profile | EvolveDev - Admin Dashboard" />
               <Profile />
             </>
           }
@@ -52,7 +52,7 @@ function App() {
           path="/forms/form-elements"
           element={
             <>
-              <PageTitle title="Form Elements | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Form Elements | EvolveDev - Admin Dashboard" />
               <FormElements />
             </>
           }
@@ -61,7 +61,7 @@ function App() {
           path="/forms/form-layout"
           element={
             <>
-              <PageTitle title="Form Layout | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Form Layout | EvolveDev - Admin Dashboard" />
               <FormLayout />
             </>
           }
@@ -70,7 +70,7 @@ function App() {
           path="/tables"
           element={
             <>
-              <PageTitle title="Tables | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Tables | EvolveDev - Admin Dashboard" />
               <Tables />
             </>
           }
@@ -79,7 +79,7 @@ function App() {
           path="/settings"
           element={
             <>
-              <PageTitle title="Settings | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Settings | EvolveDev - Admin Dashboard" />
               <Settings />
             </>
           }
@@ -88,7 +88,7 @@ function App() {
           path="/ui/alerts"
           element={
             <>
-              <PageTitle title="Alerts | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Alerts | EvolveDev - Admin Dashboard" />
               <Alerts />
             </>
           }
@@ -97,17 +97,17 @@ function App() {
           path="/ui/buttons"
           element={
             <>
-              <PageTitle title="Buttons | TailAdmin - Tailwind CSS Admin Dashboard Template" />
+              <PageTitle title="Buttons | EvolveDev - Admin Dashboard" />
               <Buttons />
             </>
           }
         />
         <Route
-          path="/auth/signin"
+          path="/posts"
           element={
             <>
-              <PageTitle title="Signin | TailAdmin - Tailwind CSS Admin Dashboard Template" />
-              <SignIn />
+              <PageTitle title="Dashboard | EvolveDev - Admin Dashboard" />
+              <Posts />
             </>
           }
         />

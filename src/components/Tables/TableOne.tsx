@@ -2,7 +2,7 @@ import { gql, useQuery } from '@apollo/client';
 
 const GET_POSTS = gql`
   query Posts {
-    posts(where: { isFeatured: true }) {
+    posts {
       id
       isLatest
       isFeatured
