@@ -12,6 +12,8 @@ const DropdownUser = () => {
     (state: { auth: { userInfo: any } }) => state.auth,
   );
 
+  console.log(userInfo);
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -36,8 +38,8 @@ const DropdownUser = () => {
         to="#"
       >
         <span className="hidden text-right lg:block">
-          <span className="block text-sm font-medium text-black dark:text-white">
-            Thomas Anree
+          <span className="block text-base font-medium text-black dark:text-white">
+            {userInfo.user.username}
           </span>
           <span className="block text-xs">UX Designer</span>
         </span>

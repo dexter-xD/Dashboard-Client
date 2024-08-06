@@ -76,7 +76,7 @@ const DropdownNotification = () => {
                       </p>
 
                       <p className="text-xs">
-                        {new Date(notification.timestamp).toLocaleString()}
+                        {new Date(notification.createdAt).toLocaleString()}
                       </p>
                     </Link>
                   </li>
