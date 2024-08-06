@@ -30,6 +30,8 @@ export interface UserInfo {
   id: string;
   name: string;
   email: string;
+  gender: string;
+  type: string;
 }
   
 export interface AuthState {

@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import ClickOutside from '../ClickOutside';
-import UserOne from '../../images/user/user-01.png';
+import UserThree from '../../images/user/user-03.png';
+import UserFour from '../../images/user/user-04.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLogoutMutation } from '../../slices/userApiSlice';
 import { logout } from '../../slices/authSlice';
@@ -39,13 +40,17 @@ const DropdownUser = () => {
       >
         <span className="hidden text-right lg:block">
           <span className="block text-base font-medium text-black dark:text-white">
-            {userInfo.user.username}
+            {userInfo.user?.username}
           </span>
-          <span className="block text-xs">UX Designer</span>
+          <span className="block text-xs">{userInfo.user?.type}</span>
         </span>
 
         <span className="h-12 w-12 rounded-full">
-          <img src={UserOne} alt="User" />
+          {userInfo.user?.gender === 'Male' ? (
+            <img src={UserFour} alt="User" />
+          ) : (
+            <img src={UserThree} alt="User" />
+          )}
         </span>
 
         <svg
