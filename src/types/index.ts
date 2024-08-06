@@ -44,3 +44,13 @@ export interface Notification {
   description: string;
   createdAt: Date;
 }
+
+export interface Task {
+  title: string;
+  description: string;
+  username: string
+  startdate: Date;
+  enddate: Date;
+  status: string;
+  id: string;
+}
