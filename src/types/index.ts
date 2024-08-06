@@ -35,3 +35,10 @@ export interface UserInfo {
 export interface AuthState {
   userInfo: UserInfo | null;
 }
+
+export interface Notification {
+  id: string;
+  title: string;
+  description: string;
+  timestamp: Date;
+}
