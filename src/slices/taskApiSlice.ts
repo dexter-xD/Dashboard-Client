@@ -6,13 +6,13 @@ const TASKS_URL = "/task";
 
 export const taskApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
-    // createTask: builder.mutation<any, { title: string; description: string }>({
-    //   query: (data) => ({
-    //     url: TASKS_URL,
-    //     method: "POST",
-    //     body: data,
-    //   }),
-    // }),
+    createTask: builder.mutation<any, { title: string; description: string, status: string, username: string, enddate: Date }>({
+      query: (data) => ({
+        url: `${TASKS_URL}/create`,
+        method: "POST",
+        body: data,
+      }),
+    }),
     fetchTasks: builder.query<any, void>({
       query: () => ({
         url: TASKS_URL,
@@ -42,6 +42,7 @@ export const taskApiSlice = apiSlice.injectEndpoints({
 });
 
 export const {
+  useCreateTaskMutation,
   useFetchTasksQuery,
   useFetchTaskByIdQuery,
 } = taskApiSlice;
