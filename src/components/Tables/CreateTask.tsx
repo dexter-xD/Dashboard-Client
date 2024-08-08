@@ -21,7 +21,7 @@ const CraeteTask = () => {
         username,
         enddate,
       }).unwrap();
-      navigate('/tables');
+      window.location.reload();
     } catch (err) {
       console.error(err);
     }
