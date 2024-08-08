@@ -1,11 +1,10 @@
-import { useFetchTasksQuery } from '../../slices/taskApiSlice';
 import { Task } from '../../types';
 
-const TableThree = () => {
-  const { data : tasks, error, isLoading} = useFetchTasksQuery();
+interface TableThreeProps {
+  tasks: Task[];
+}
 
-  if (isLoading) return <p>Loading tasks...</p>;
-  if (error) return <p>Error fetching tasks</p>;
+const TableThree: React.FC<TableThreeProps> = ({ tasks }) => {
   return (
     <div className="rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
       <div className="max-w-full overflow-x-auto">
@@ -49,22 +48,19 @@ const TableThree = () => {
                       task.status === 'completed'
                         ? 'bg-success text-success'
                         : task.status === 'ongoing'
-                        ? 'bg-warning text-warning'
-                        : 'bg-danger text-danger'
-                        
+                          ? 'bg-warning text-warning'
+                          : 'bg-danger text-danger'
                     }`}
                   >
                     {task.status}
                   </p>
                 </td>
                 <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
-                <p className="text-black dark:text-white">
-                    {task.username}
-                  </p>
+                  <p className="text-black dark:text-white">{task.username}</p>
                 </td>
                 <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
-                <p className="text-black dark:text-white">
-                  {new Date(task.enddate).toLocaleDateString()}
+                  <p className="text-black dark:text-white">
+                    {new Date(task.enddate).toLocaleDateString()}
                   </p>
                 </td>
               </tr>

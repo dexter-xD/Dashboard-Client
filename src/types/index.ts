@@ -50,7 +50,7 @@ export interface Task {
   description: string;
   username: string
   startdate: Date;
-  enddate: Date;
+  enddate: Date | any;
   status: string;
   id: string;
 }

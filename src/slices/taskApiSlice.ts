@@ -1,3 +1,4 @@
+import { Task } from "../types";
 import { apiSlice } from "./apiSlice";
 
 const TASKS_URL = "/task";
@@ -6,14 +7,14 @@ const TASKS_URL = "/task";
 
 export const taskApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
-    createTask: builder.mutation<any, { title: string; description: string, status: string, username: string, enddate: Date }>({
+    createTask: builder.mutation<any, { title: string; description: string, username: string, enddate: Date }>({
       query: (data) => ({
         url: `${TASKS_URL}/create`,
         method: "POST",
         body: data,
       }),
     }),
-    fetchTasks: builder.query<any, void>({
+    fetchTasks: builder.query<Task[], void>({
       query: () => ({
         url: TASKS_URL,
         method: "GET",
